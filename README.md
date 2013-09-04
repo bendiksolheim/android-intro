@@ -1,0 +1,1 @@
+A quick slide-set for the purpose of keeping track of the most important topics of Android development.
