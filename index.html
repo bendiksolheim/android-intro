@@ -53,7 +53,9 @@ background-image: url('http://developer.android.com/images/brand/Android_Robot_2
 
 - Stort sett alle 'kjente' java-klasser finnes
 - Stort sett semantisk slik man kjenner det fra JVM
-- Noen ting litt spesielt. Serializable DRITTREGT
+- Noen ting litt spesielt. Feks Serializable DRITTREGT
+- Android-prosjekt likt et standard Java-prosjekt (src, test osv)
+	- men pluss litt til
 
 ---
 
@@ -194,15 +196,32 @@ background-image: url('http://developer.android.com/images/fragment_lifecycle.pn
 ---
 
 # AsyncTask
+```java
+new DownloadTask().execute(url1, url2, url3);
+```
 
 ???
+
+- Trådhåndtering i Java er drit.
+	- særlig på mobil: batteritid, begrenset minne/cpu
+- På Android gjøres __ALT__ i GUI/Main-tråden, med mindre man forker
+- AsyncTask tar hånd om dette
+- Extender AsyncTask
+- `doInBackground` kjøres i en bakgrunnstråd
 
 ---
 
 # Views
-#### XML
+#### XML/Java-kode
 
 ???
+
+- Hovedsaklig satt opp i XML
+- Mange måter å sette opp GUI på:
+	- LinearLayout
+	- RelativeLayout
+- Et XML-element for et GUI-element
+- Standard-elementer som buttons, input-felt osv
 
 ---
 
@@ -210,7 +229,8 @@ background-image: url('http://developer.android.com/images/fragment_lifecycle.pn
 
 ???
 
-- Beskriver hele appen din
+- ALLE apps har denne
+- Beskriver hele appen din (alle activities, permissions)
 - Hvordan den startes
 - Alle Activities (MÅ være listet her, ellers krasjer det)
 - Alle permissions (MÅ være listet her, ellers krasjer det)
